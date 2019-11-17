@@ -75,9 +75,9 @@ public class Logic {
         int column = 0;
         for (int index = 0; index != table.length && !result; index++) {
             if (table[index][index] == 1) {
+                boolean rWin = true;
+                boolean cWin = true;
                 for (int i = 0; i != table.length; i++) {
-                    boolean rWin = true;
-                    boolean cWin = true;
                     row = table[index][i];
                     column = table[i][index];
                     if (row != 1) {
@@ -86,12 +86,7 @@ public class Logic {
                     if (column != 1) {
                         cWin = false;
                     }
-                    if (!rWin && !cWin) {
-                        result = false;
-                        break;
-                    } else {
-                        result = true;
-                    }
+                    result = rWin || cWin;
                 }
             }
         }
