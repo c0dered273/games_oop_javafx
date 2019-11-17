@@ -86,8 +86,8 @@ public class Logic {
                     if (column != 1) {
                         cWin = false;
                     }
-                    result = rWin || cWin;
                 }
+                result = rWin || cWin;
             }
         }
         return result;
