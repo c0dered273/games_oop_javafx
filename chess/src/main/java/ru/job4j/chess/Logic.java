@@ -27,12 +27,10 @@ public class Logic {
         if (index != -1) {
             Cell[] steps = this.figures[index].way(source, dest);
             if (steps.length > 0 && steps[steps.length - 1].equals(dest)) {
-                for (Figure fig : figures) {
-                    for (Cell wayCell : steps) {
-                        if (fig.position().equals(wayCell)) {
-                            rst = false;
-                            break;
-                        }
+                for (Cell wayCell : steps) {
+                    if (findBy(wayCell) != -1) {
+                        rst = false;
+                        break;
                     }
                 }
             }
